@@ -177,6 +177,12 @@ Pod::Spec.new do |spec|
     ss.dependency 'WalletConnectSwiftV2/WalletConnectUtils'
   end
 
+  spec.subspec 'WalletConnectModal' do |ss|
+    ss.source_files = 'Sources/WalletConnectModal/**/*.{h,m,swift}'
+    ss.dependency 'WalletConnectSwiftV2/WalletConnectSign'
+    ss.dependency 'QRCode', :git 'https://github.com/WalletConnect/QRCode', '~> 14.3.1'
+  end
+
   spec.subspec 'Commons' do |ss|
     ss.source_files = 'Sources/Commons/**/*.{h,m,swift}'
   end
